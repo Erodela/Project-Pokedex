@@ -5,7 +5,7 @@ const About = (props) => {
     <>
       <div>
         <h1>About</h1>
-        <p>This app lets you find info about Gundam Model Kits.</p>
+        <p>This app lets you find info about Pokemon.</p>
       </div>
     </>
   );

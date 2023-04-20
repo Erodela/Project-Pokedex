@@ -1,0 +1,14 @@
+.container {
+  align-items: center;
+}
+table {
+  max-width: 20em;
+  float: left;
+  display: flex;
+  align-items: center;
+}
+tr,
+td {
+  border: 1px solid #999999;
+  padding: 3px 10px;
+}

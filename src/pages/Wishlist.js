@@ -5,7 +5,7 @@ const Wishlist = (props) => {
     <div>
       <h1>Wishlist</h1>
       <p>
-        This is where you can see the Gunpla you wishlisted. They'll be listed
+        This is where you can see the Pokemon you wishlisted. They'll be listed
         here.
       </p>
     </div>
