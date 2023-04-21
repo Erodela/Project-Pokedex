@@ -9,7 +9,6 @@
 }
 table {
   max-width: 20em;
-  /* float: right; */
   align-items: center;
   border: 1px solid black;
   background-color: #dddada;

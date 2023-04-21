@@ -25,6 +25,7 @@ const Search = () => {
       pkmnArr.push(res.data);
       setPkmnType1(res.data.types[0].type.name);
       if (res.data.types[1]) {
+        //If statement gets pokemon's second typing if it has one.
         setPkmnType2(res.data.types[1].type.name);
       } else {
         setPkmnType2(res.data.types[0].type.name);
@@ -52,8 +53,6 @@ const Search = () => {
     e.preventDefault();
     getPokemon();
   };
-  //Other Function
-  function fav() {}
 
   return (
     <div>
@@ -72,6 +71,7 @@ const Search = () => {
       {pkmnData.map((data) => {
         return (
           <div className="container">
+            {/*Table for pokedex entry*/}
             <img src={data.sprites["front_default"]} alt={pkmnName} />
             <table>
               <tr className="dexnumber">
@@ -119,7 +119,6 @@ const Search = () => {
                 <td>{pkmnSpe}</td>
               </tr>
             </table>
-            <button onClick={fav()}>Favorite</button>
           </div>
         );
       })}

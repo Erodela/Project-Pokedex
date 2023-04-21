@@ -7,8 +7,6 @@ import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
 import "./App.css";
 
-import Pokemon from "./pages/Pokemon";
-
 export default function App() {
   return (
     <div className="App">
@@ -18,7 +16,6 @@ export default function App() {
         <Route path="/About" element={<About />} />
         <Route path="/Types" element={<Types />} />
         <Route path="/Search" element={<Search />} />
-        <Route path="/Search/:name" element={<Pokemon />} />
         <Route path="/Wishlist" element={<Wishlist />} />
       </Routes>
     </div>
