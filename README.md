@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+## Project title:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pokedex
+A simple SPA where you can look up statistics of every Pokemon and the Pokemon Type Match-Up chart.
 
-## Available Scripts
+## Live Demo:
 
-In the project directory, you can run:
+:
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Clone the repository and type in npm start in your terminal.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Motivation:
 
-### `npm test`
+Pokemon is one of my favorite media franchises and I knew I would have fun putting this together.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Technology used:
 
-### `npm run build`
+VS Code, HTML, CSS, Javascript, React
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Code Example:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+const getPokemon = async () => {
+const pkmnArr = [];
+try {
+const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+const res = await axios.get(url);
+pkmnArr.push(res.data);
+setPkdexNum(res.data.id);
+if (res.data.types[1]) {
+//If statement gets pokemon's second typing if it has one.
+setPkmnType2(res.data.types[1].type.name);
+} else {
+setPkmnType2(res.data.types[0].type.name);
+}
+setPkmnData(pkmnArr);
+console.log(res);
+console.log(url);
+} catch (e) {
+console.log(e);
+}
+};
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Usage:
 
-### `npm run eject`
+Everything is done with mouse and keyboard.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## To-dos
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Utilize useEffect() more. I had a hard time implementing it into the project. I feel my code could have been a lot neater and efficient if I knew how to use it.
+Optimize the code more. I feel like I could have eliminated a lot of the repetition, but I ran into errors while trying to do so. In the end I just did what works.
+Apply background images. The App while colorful, looks very plain.
+Fix bugs.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Bugs
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The buttons on the search page require you to press them twice in order for them to work as intended. Pressing the opposite button before pressing the first one twice will mess up the order you navigate through the PokeDex.
 
-## Learn More
+The CSS files are importing without me actually importing them. They are affecting JS files they are not supposed to. Instead of trying to fix it, I just took advantage of it.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The text in the Type Match-Up Chart's data table are not centered because of the way I structured the table.

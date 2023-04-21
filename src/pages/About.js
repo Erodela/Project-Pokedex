@@ -1,11 +1,14 @@
 import React from "react";
 
-const About = (props) => {
+const About = () => {
   return (
     <>
       <div className="text">
         <h1>About</h1>
-        <p>This app lets you find info about Pokemon.</p>
+        <h3>
+          A simple SPA where you can look up statistics of every Pokemon and the
+          Pokemon Type Match-Up chart.
+        </h3>
       </div>
     </>
   );

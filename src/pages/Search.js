@@ -50,10 +50,10 @@ const Search = () => {
   return (
     <div>
       <h1 className="text">Pokemon Search</h1>
-      <p className="text">
+      <h3 className="text">
         This is where you search for Pokemon. You search for them via National
         Dex # or by name.
-      </p>
+      </h3>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

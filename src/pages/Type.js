@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
-export default function Type(props) {
+export default function Type() {
   const { type } = useParams();
   const [matchUp, setMatchUp] = useState([]);
   const url = `https://pokeapi.co/api/v2/type/${type}`;
@@ -35,10 +35,10 @@ export default function Type(props) {
       <h1 className="text">
         {type.charAt(0).toUpperCase() + type.slice(1) + " Type"}
       </h1>
-      <p className="text">
+      <h3 className="text">
         Click this button to see {type.charAt(0).toUpperCase() + type.slice(1)}{" "}
         type's match-up chart.
-      </p>
+      </h3>
       <button onClick={getMatchUp}>CLICK</button>
       {matchUp.map((data) => {
         return (
