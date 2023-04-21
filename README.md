@@ -5,11 +5,12 @@ A simple SPA where you can look up statistics of every Pokemon and the Pokemon T
 
 ## Live Demo:
 
-:
+https://main--polite-madeleine-e5b047.netlify.app/
 
 ## Installation
 
 Clone the repository and type in npm start in your terminal.
+https://github.com/Erodela/Module-2-Project-Pokedex
 
 ## Motivation:
 
