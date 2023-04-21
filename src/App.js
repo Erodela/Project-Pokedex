@@ -5,7 +5,6 @@ import Types from "./pages/Types";
 import Type from "./pages/Type";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import Wishlist from "./pages/Wishlist";
 import "./App.css";
 
 export default function App() {
@@ -18,7 +17,6 @@ export default function App() {
         <Route path="/Types" element={<Types />} />
         <Route path="/Types/:type" element={<Type />} />
         <Route path="/Search" element={<Search />} />
-        <Route path="/Wishlist" element={<Wishlist />} />
       </Routes>
     </div>
   );

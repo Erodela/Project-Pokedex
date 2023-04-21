@@ -6,39 +6,21 @@ import { Link } from "react-router-dom";
 const Search = () => {
   const [pokemon, setPokemon] = useState("");
   const [pkmnData, setPkmnData] = useState([]);
-  const [pkmnType1, setPkmnType1] = useState("");
-  const [pkmnType2, setPkmnType2] = useState("");
-  const [pkmnName, setPkmnName] = useState("");
   const [pkdexNum, setPkdexNum] = useState("");
-  const [pkmnHP, setPkmnHP] = useState("");
-  const [pkmnAtk, setPkmnAtk] = useState("");
-  const [pkmnDef, setPkmnDef] = useState("");
-  const [pkmnSpA, setPkmnSpA] = useState("");
-  const [pkmnSpD, setPkmnSpD] = useState("");
-  const [pkmnSpe, setPkmnSpe] = useState("");
-  const [nextPkmn, setNextPkmn] = useState("");
-  const [prevPkmn, setPrevPkmn] = useState("");
+  const [pkmnType2, setPkmnType2] = useState("");
   const getPokemon = async () => {
     const pkmnArr = [];
     try {
       const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
       const res = await axios.get(url);
       pkmnArr.push(res.data);
-      setPkmnType1(res.data.types[0].type.name);
+      setPkdexNum(res.data.id);
       if (res.data.types[1]) {
         //If statement gets pokemon's second typing if it has one.
         setPkmnType2(res.data.types[1].type.name);
       } else {
         setPkmnType2(res.data.types[0].type.name);
       }
-      setPkmnName(res.data.species.name);
-      setPkmnHP(res.data.stats[0].base_stat);
-      setPkmnAtk(res.data.stats[1].base_stat);
-      setPkmnDef(res.data.stats[2].base_stat);
-      setPkmnSpA(res.data.stats[3].base_stat);
-      setPkmnSpD(res.data.stats[4].base_stat);
-      setPkmnSpe(res.data.stats[5].base_stat);
-      setPkdexNum(res.data.id);
       setPkmnData(pkmnArr);
       console.log(res);
       console.log(url);
@@ -54,8 +36,16 @@ const Search = () => {
     e.preventDefault();
     getPokemon();
   };
-  function goToNextPkmn() {}
-  function goToPrevPkmn() {}
+  function goToNextPkmn() {
+    let newPkmn1 = pkdexNum + 1;
+    setPokemon(newPkmn1);
+    getPokemon();
+  }
+  function goToPrevPkmn() {
+    let newPkmn2 = pkdexNum - 1;
+    setPokemon(newPkmn2);
+    getPokemon();
+  }
   //getPokemon return
   return (
     <div>
@@ -77,21 +67,24 @@ const Search = () => {
           <div className="container">
             {/*Table for pokedex entry*/}
             <button onClick={goToPrevPkmn}>Prev</button>
-            <img src={data.sprites["front_default"]} alt={pkmnName} />
+            <img src={data.sprites["front_default"]} alt={data.name} />
             <table className="sTable">
               <tr className="dexnumber">
                 <td>National Dex #:</td>
-                <td>{pkdexNum}</td>
+                <td>{data.id}</td>
               </tr>
               <tr className="name">
                 <td>Name:</td>
-                <td>{pkmnName.charAt(0).toUpperCase() + pkmnName.slice(1)}</td>
+                <td>
+                  {data.name.charAt(0).toUpperCase() + data.name.slice(1)}
+                </td>
               </tr>
               <tr className="typing">
                 <td>Type:</td>
                 <td>
-                  <Link to={`/Types/${pkmnType1}`}>
-                    {pkmnType1.charAt(0).toUpperCase() + pkmnType1.slice(1)}
+                  <Link to={`/Types/${data.types[0].type.name}`}>
+                    {data.types[0].type.name.charAt(0).toUpperCase() +
+                      data.types[0].type.name.slice(1)}
                   </Link>
                   /
                   <Link to={`/Types/${pkmnType2}`}>
@@ -101,27 +94,27 @@ const Search = () => {
               </tr>
               <tr className="HP">
                 <td>Base HP:</td>
-                <td>{pkmnHP}</td>
+                <td>{data.stats[0].base_stat}</td>
               </tr>
               <tr className="Atk">
                 <td>Base Attack:</td>
-                <td>{pkmnAtk}</td>
+                <td>{data.stats[1].base_stat}</td>
               </tr>
               <tr className="Def">
                 <td>Base Defense:</td>
-                <td>{pkmnDef}</td>
+                <td>{data.stats[2].base_stat}</td>
               </tr>
               <tr className="SpA">
                 <td>Base Special Attack:</td>
-                <td>{pkmnSpA}</td>
+                <td>{data.stats[3].base_stat}</td>
               </tr>
               <tr className="SpD">
                 <td>Base Special Defense:</td>
-                <td>{pkmnSpD}</td>
+                <td>{data.stats[4].base_stat}</td>
               </tr>
               <tr className="Spe">
                 <td>Base Speed:</td>
-                <td>{pkmnSpe}</td>
+                <td>{data.stats[5].base_stat}</td>
               </tr>
             </table>
             <button onClick={goToNextPkmn}>Next</button>

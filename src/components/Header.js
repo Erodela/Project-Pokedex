@@ -12,9 +12,6 @@ export default function Header(props) {
       <Link to="/Types">
         <div>Types</div>
       </Link>
-      <Link to="/Wishlist">
-        <div>Wishlist</div>
-      </Link>
       <Link to="/About">
         <div>About</div>
       </Link>

@@ -101,3 +101,21 @@
   background-color: pink;
   color: black;
 }
+.SuperEffective {
+  background-color: greenyellow;
+}
+.Weakness {
+  background-color: indianred;
+}
+.NotVeryEffective {
+  background-color: skyblue;
+}
+.Resistance {
+  background-color: lightseagreen;
+}
+.Inneffective {
+  background-color: lightcoral;
+}
+.ImmuneTo {
+  background-color: gray;
+}
