@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/Header";
 import About from "./pages/About";
-import Collection from "./pages/Collection";
+import Types from "./pages/Types";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import Wishlist from "./pages/Wishlist";
@@ -16,7 +16,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/About" element={<About />} />
-        <Route path="/Collection" element={<Collection />} />
+        <Route path="/Types" element={<Types />} />
         <Route path="/Search" element={<Search />} />
         <Route path="/Search/:name" element={<Pokemon />} />
         <Route path="/Wishlist" element={<Wishlist />} />

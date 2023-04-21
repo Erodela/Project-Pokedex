@@ -7,10 +7,10 @@ export default function Header(props) {
         <div>Home Page</div>
       </Link>
       <Link to="/Search">
-        <div>Search</div>
+        <div>Pokemon Search</div>
       </Link>
-      <Link to="/Collection">
-        <div>Collection</div>
+      <Link to="/Types">
+        <div>Types</div>
       </Link>
       <Link to="/Wishlist">
         <div>Wishlist</div>
