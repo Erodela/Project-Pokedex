@@ -18,32 +18,70 @@ export default function TypeList() {
   if (loading) {
     return "loading";
   }
+
+  //typelist return
   return (
     <div className="tContainer">
       <table className="tTable">
         <tr className="tRow">
-          <td className="tD">{types[0]}</td>
-          <td>{types[1]}</td>
-          <td>{types[2]}</td>
-          <td>{types[3]}</td>
-          <td>{types[4]}</td>
-          <td>{types[5]}</td>
+          <Link to={`/Types/${types[0]}`}>
+            <td className="normal">Normal</td>
+          </Link>
+          <Link to={`/Types/${types[1]}`}>
+            <td className="fighting">Fighting</td>
+          </Link>
+          <Link to={`/Types/${types[2]}`}>
+            <td className="flying">Flying</td>
+          </Link>
+          <Link to={`/Types/${types[3]}`}>
+            <td className="poison">Poison</td>
+          </Link>
+          <Link to={`/Types/${types[4]}`}>
+            <td className="ground">Ground</td>
+          </Link>
+          <Link to={`/Types/${types[5]}`}>
+            <td className="rock">Rock</td>
+          </Link>
         </tr>
         <tr>
-          <td>{types[6]}</td>
-          <td>{types[7]}</td>
-          <td>{types[8]}</td>
-          <td>{types[9]}</td>
-          <td>{types[10]}</td>
-          <td>{types[11]}</td>
+          <Link to={`/Types/${types[6]}`}>
+            <td className="bug">Bug</td>
+          </Link>
+          <Link to={`/Types/${types[7]}`}>
+            <td className="ghost">Ghost</td>
+          </Link>
+          <Link to={`/Types/${types[8]}`}>
+            <td className="steel">Steel</td>
+          </Link>
+          <Link to={`/Types/${types[9]}`}>
+            <td className="fire">Fire</td>
+          </Link>
+          <Link to={`/Types/${types[10]}`}>
+            <td className="water">Water</td>
+          </Link>
+          <Link to={`/Types/${types[11]}`}>
+            <td className="grass">Grass</td>
+          </Link>
         </tr>
         <tr>
-          <td>{types[12]}</td>
-          <td>{types[13]}</td>
-          <td>{types[14]}</td>
-          <td>{types[15]}</td>
-          <td>{types[16]}</td>
-          <td>{types[17]}</td>
+          <Link to={`/Types/${types[12]}`}>
+            <td className="electric">Electric</td>
+          </Link>
+          <Link to={`/Types/${types[13]}`}>
+            <td className="psychic">Psychic</td>
+          </Link>
+          <Link to={`/Types/${types[14]}`}>
+            <td className="ice">Ice</td>
+          </Link>
+          <Link to={`/Types/${types[15]}`}>
+            <td className="dragon">Dragon</td>
+          </Link>
+          <Link to={`/Types/${types[16]}`}>
+            <td className="dark">Dark</td>
+          </Link>
+          <Link to={`/Types/${types[17]}`}>
+            <td className="fairy">Fairy</td>
+          </Link>
         </tr>
       </table>
     </div>

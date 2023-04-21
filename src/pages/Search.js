@@ -16,7 +16,8 @@ const Search = () => {
   const [pkmnSpA, setPkmnSpA] = useState("");
   const [pkmnSpD, setPkmnSpD] = useState("");
   const [pkmnSpe, setPkmnSpe] = useState("");
-
+  const [nextPkmn, setNextPkmn] = useState("");
+  const [prevPkmn, setPrevPkmn] = useState("");
   const getPokemon = async () => {
     const pkmnArr = [];
     try {
@@ -53,7 +54,9 @@ const Search = () => {
     e.preventDefault();
     getPokemon();
   };
-
+  function goToNextPkmn() {}
+  function goToPrevPkmn() {}
+  //getPokemon return
   return (
     <div>
       <h1 className="text">Pokemon Search</h1>
@@ -69,11 +72,13 @@ const Search = () => {
         />
       </form>
       {pkmnData.map((data) => {
+        //anonymous function return
         return (
           <div className="container">
             {/*Table for pokedex entry*/}
+            <button onClick={goToPrevPkmn}>Prev</button>
             <img src={data.sprites["front_default"]} alt={pkmnName} />
-            <table>
+            <table className="sTable">
               <tr className="dexnumber">
                 <td>National Dex #:</td>
                 <td>{pkdexNum}</td>
@@ -85,11 +90,11 @@ const Search = () => {
               <tr className="typing">
                 <td>Type:</td>
                 <td>
-                  <Link to="/Types">
+                  <Link to={`/Types/${pkmnType1}`}>
                     {pkmnType1.charAt(0).toUpperCase() + pkmnType1.slice(1)}
                   </Link>
                   /
-                  <Link to="/Types">
+                  <Link to={`/Types/${pkmnType2}`}>
                     {pkmnType2.charAt(0).toUpperCase() + pkmnType2.slice(1)}
                   </Link>
                 </td>
@@ -119,6 +124,7 @@ const Search = () => {
                 <td>{pkmnSpe}</td>
               </tr>
             </table>
+            <button onClick={goToNextPkmn}>Next</button>
           </div>
         );
       })}

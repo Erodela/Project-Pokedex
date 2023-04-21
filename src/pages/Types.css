@@ -2,22 +2,102 @@
   align-items: center;
   justify-content: center;
   display: flex;
-  background-color: rgb(199, 73, 73);
+  background-color: rgb(219, 214, 214);
 }
 .text {
   color: white;
 }
-table {
-  max-width: 20em;
-  /* float: right; */
-  align-items: center;
-  border: 1px solid black;
-  background-color: #dddada;
+.normal,
+.fighting,
+.flying,
+.poison,
+.ground,
+.rock,
+.bug,
+.ghost,
+.steel,
+.fire,
+.water,
+.grass,
+.electric,
+.psychic,
+.ice,
+.dragon,
+.dark,
+.fairy {
+  height: 80px;
+  width: 120px;
+  vertical-align: middle;
 }
-td {
-  border: 1px solid black;
-  padding: 3px 10px;
+.normal {
+  background-color: gainsboro;
+  color: black;
 }
-tr {
-  background-color: #f5f3f3;
+.fighting {
+  background-color: rgb(146, 33, 33);
+  color: rgb(228, 227, 227);
+}
+.flying {
+  background-color: plum;
+  color: black;
+}
+.poison {
+  background-color: purple;
+  color: rgb(228, 227, 227);
+}
+.ground {
+  background-color: burlywood;
+  color: black;
+}
+.rock {
+  background-color: rgb(99, 89, 1);
+  color: rgb(228, 227, 227);
+}
+.bug {
+  background-color: olivedrab;
+  color: black;
+}
+.ghost {
+  background-color: rgb(63, 28, 63);
+  color: rgb(228, 227, 227);
+}
+.steel {
+  background-color: lightslategray;
+  color: black;
+}
+.fire {
+  background-color: orangered;
+  color: black;
+}
+.water {
+  background-color: rgb(33, 142, 231);
+  color: black;
+}
+.grass {
+  background-color: limegreen;
+  color: black;
+}
+.electric {
+  background-color: yellow;
+  color: black;
+}
+.psychic {
+  background-color: palevioletred;
+  color: black;
+}
+.ice {
+  background-color: aquamarine;
+  color: black;
+}
+.dragon {
+  background-color: blueviolet;
+  color: black;
+}
+.dark {
+  background-color: rgb(29, 28, 28);
+  color: rgb(228, 227, 227);
+}
+.fairy {
+  background-color: pink;
+  color: black;
 }
